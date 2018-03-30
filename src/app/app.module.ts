@@ -7,6 +7,11 @@ import { EntryListComponent } from './entry-list/entry-list.component';
 import { EditEntryComponent } from './edit-entry/edit-entry.component';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { MovienessPipe } from './movieness.pipe';
+import { GamenessPipe } from './gameness.pipe';
+import { AlbumnessPipe } from './albumness.pipe';
+import { ShownessPipe } from './showness.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +19,10 @@ import { MovienessPipe } from './movieness.pipe';
     EntryListComponent,
     EditEntryComponent,
     NewEntryComponent,
-    MovienessPipe
+    MovienessPipe,
+    GamenessPipe,
+    AlbumnessPipe,
+    ShownessPipe
   ],
   imports: [
     BrowserModule,
