@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Entry, Movie, Game, Album, Show} from '../../models/entry';
+import { Entry } from '../../models/entry';
 
 @Component({
   selector: 'app-entry-list',
@@ -9,6 +9,12 @@ import { Entry, Movie, Game, Album, Show} from '../../models/entry';
 export class EntryListComponent {
 
   @Input() childEntryList: Entry[];
+  @Output() clickSender = new EventEmitter();
+
+  editButtonClicked(entryToEdit: Entry)
+  {
+    this.clickSender.emit(entryToEdit);
+  }
 
   scoreColor(currentEntry)
   {

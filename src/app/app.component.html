@@ -27,11 +27,11 @@
     </li>
   </ul>
 </div>
-
-
 </nav>
 
-<div class="container">
+<app-entry-list [childEntryList]="masterEntryList" (clickSender)="editEntry($event)"></app-entry-list>
+
+<div class="row">
+  <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
 
 </div>
-<app-entry-list [childEntryList]="masterEntryList"></app-entry-list>

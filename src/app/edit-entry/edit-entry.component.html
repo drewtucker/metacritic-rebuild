@@ -1,32 +1,34 @@
-<form class="form-control">
+<div *ngIf="childSelectedEntry">
 
-<h4>Edit {{selectedEntry.title}}</h4>
+<div class="form-control">
+<h4>Edit {{childSelectedEntry.title}}</h4>
 <label>Title:</label>
-<input [(ngModel)]="selectedEntry.title">
+<input [(ngModel)]="childSelectedEntry.title">
 <br>
-<select [(ngModel)]="selectedEntry.type">
-  <option value="Movie">Movie</option>
-  <option value="Game">Game</option>
-  <option value="Album">Album</option>
-  <option value="Show">Show</option>
+<select [(ngModel)]="childSelectedEntry.type">
+  <option [value]="Movie">Movie</option>
+  <option [value]="Game">Game</option>
+  <option [value]="Album">Album</option>
+  <option [value]="Show">Show</option>
 </select>
 <br>
 <label>Creator:</label>
-<input [(ngModel)]="selectedEntry.creator">
+<input [(ngModel)]="childSelectedEntry.creator">
 <br>
 <label>metascore:</label>
-<input [(ngModel)]="selectedEntry.metascore">
+<input [(ngModel)]="childSelectedEntry.metascore">
 <br>
 <label>Release Date:</label>
-<input [(ngModel)]="selectedEntry.releaseDate">
+<input [(ngModel)]="childSelectedEntry.releaseDate">
 <br>
 <label>Description:</label>
-<input [(ngModel)]="selectedEntry.description">
+<input [(ngModel)]="childSelectedEntry.description">
 <br>
 <label>Creator:</label>
-<input [(ngModel)]="selectedEntry.creator">
+<input [(ngModel)]="childSelectedEntry.creator">
 <br>
 <label>Image URL:</label>
-<input [(ngModel)]="selectedEntry.image">
+<input [(ngModel)]="childSelectedEntry.image">
 <button (click)="finishedEditing()" class="btn btn-warning">Update</button>
-</form>
+</div>
+</div>
