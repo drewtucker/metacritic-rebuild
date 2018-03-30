@@ -1,3 +1,16 @@
-<p>
-  entry-list works!
-</p>
+<div id="entryList">
+<div class="row" *ngFor="let currentEntry of childEntryList">
+  <div class="col-md-4">
+    <h3 [class]="scoreColor(currentEntry)" style="float:left">{{currentEntry.metascore}}</h3>
+    <h4 >{{currentEntry.title}} <img src="{{currentEntry.image}}"></h4>
+    <p>{{currentEntry.creator}}</p>
+    <p>{{currentEntry.releaseDate}}</p>
+
+  </div>
+  <div class="col-md-3">
+    <p>{{currentEntry.description}}</p>
+
+  </div>
+
+</div>
+</div>

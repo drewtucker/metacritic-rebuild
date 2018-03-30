@@ -8,7 +8,7 @@ import { Entry, Movie, Game, Album, Show } from '../models/entry';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Metacritic';
+  title = 'metacritic';
 
   masterEntryList: Entry[] =
   [
