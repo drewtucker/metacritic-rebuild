@@ -21,7 +21,8 @@ export class AppComponent {
     new Entry("Game", "Sea of Thieves", "Microsoft Game Studios", 69, "March 20, 2018", "Join up with your friends, and be the pirate you always wanted to be!", "https://tinyurl.com/ydx2ffll"),
     new Entry("Album", "Blonde", "Frank Ocean", 87, "Aug 20, 2016", "Features contributions from Radiohead, Kendrick Lamar and Kanye West.", "https://tinyurl.com/ycy4vmgy"),
     new Entry("Movie", "Ready Player One", "Steven Spielberg", 64, "March 29, 2018", "Young hero Wade Watts enters into a digital contest to win an immense fortune.", "https://tinyurl.com/yclwlx5s"),
-    new Entry("Album", "Golden Hour", "Kacey Musgraves", 89, "March 30, 2018", "The 7th release for the country singer was produced by Daniel Tashian and Ian Fitchuk.", "https://tinyurl.com/y88lrvpv")
+    new Entry("Album", "Golden Hour", "Kacey Musgraves", 89, "March 30, 2018", "The 7th release for the country singer was produced by Daniel Tashian and Ian Fitchuk.", "https://tinyurl.com/y88lrvpv"),
+    new Entry("Show", "The Terror: Season 1", "AMC", 76, "March 26, 2018", "A Royal Navy expedition in 1847 struggles to stay alive through the Northwest Passage.", "https://tinyurl.com/ybow5hak")
 
   ]
 
