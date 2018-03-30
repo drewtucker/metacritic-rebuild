@@ -1,6 +1,6 @@
 <div *ngIf="childSelectedEntry">
 
-<div class="form-control">
+<div class="form-control" style="text-align: center">
 <h4>Edit {{childSelectedEntry.title}}</h4>
 <label>Title:</label>
 <input [(ngModel)]="childSelectedEntry.title">
@@ -16,7 +16,7 @@
 <label>Creator:</label>
 <input [(ngModel)]="childSelectedEntry.creator">
 <br>
-<label>metascore:</label>
+<label>Metascore:</label>
 <input [(ngModel)]="childSelectedEntry.metascore">
 <br>
 <label>Release Date:</label>

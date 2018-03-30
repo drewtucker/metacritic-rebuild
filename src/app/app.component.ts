@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Entry } from '../models/entry';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +19,11 @@ export class AppComponent {
     new Entry("Show", "The Americans: Season 6", "FX", 92, "March 28, 2018", "The sixth and final season of the acclaimed espionage drama.", "https://tinyurl.com/ycj738qc")
 
   ]
+
+  newEntry()
+  {
+    $("#newEntryForm").fadeToggle();
+  }
 
   addEntry(newEntry: Entry)
   {
