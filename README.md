@@ -9,12 +9,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Metacritic is a website devoted to gathering and displaying ratings for Movies, Games, TV Shows and Music.
 * Each entry will have at least a title, a creator, and a single metascore (1-100).
 * To start with, all current entries will be displayed to the user on the home screen.
-* The user will be given the option of adding an entry, and will be presented with a form to fill out relevant information.
-* When the form is submitted, the entry will be added to the list and displayed on the page.
-* The user will be given the option of filtering the list by the type of media they wish to see.
+* The user will be given the option of adding an entry via the button on the top nav bar, and will be presented with a form to fill out relevant information.
+* When the form is submitted, the form will disappear, the entry will be added to the list and displayed on the page.
 * The user will be given the option of editing an entry after it has been created.
 
 ## Future Plans
+* The user will be given the option of filtering the list by the type of media they wish to see.
 * The app will have separate pages for each form of media.
 * Each page will automatically filter for that form of media, and display the results.
 * The app will allow users to filter each page by metascore.
