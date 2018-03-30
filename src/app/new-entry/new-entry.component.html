@@ -1,0 +1,30 @@
+
+<div class="form-control">
+<h4>New Entry</h4>
+<label>Title:</label>
+<input #newTitle>
+<br>
+<label>Type:</label>
+<select #newType>
+  <option [value]="Movie">Movie</option>
+  <option [value]="Game">Game</option>
+  <option [value]="Album">Album</option>
+  <option [value]="Show">Show</option>
+</select>
+<br>
+<label>Creator:</label>
+<input #newCreator>
+<br>
+<label>metascore:</label>
+<input #newMetascore>
+<br>
+<label>Release Date:</label>
+<input #newReleaseDate>
+<br>
+<label>Description:</label>
+<input #newDescription>
+<br>
+<label>Image URL:</label>
+<input #newImage>
+<button class="btn btn-outline-warning" (click)="submitForm(newType.value, newTitle.value, newCreator.value, newMetascore.value, newReleaseDate.value, newDescription.value, newImage.value); newType.value=''; newTitle.value=''; newCreator.value=''; newMetascore.value=''; newReleaseDate.value=''; newDescription.value=''; newImage.value='';">Create</button>
+</div>

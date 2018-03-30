@@ -5,6 +5,7 @@
 <label>Title:</label>
 <input [(ngModel)]="childSelectedEntry.title">
 <br>
+<label>Type:</label>
 <select [(ngModel)]="childSelectedEntry.type">
   <option [value]="Movie">Movie</option>
   <option [value]="Game">Game</option>
@@ -24,11 +25,9 @@
 <label>Description:</label>
 <input [(ngModel)]="childSelectedEntry.description">
 <br>
-<label>Creator:</label>
-<input [(ngModel)]="childSelectedEntry.creator">
-<br>
 <label>Image URL:</label>
 <input [(ngModel)]="childSelectedEntry.image">
-<button (click)="finishedEditing()" class="btn btn-warning">Update</button>
+<hr style="border-color: gold">
+<button (click)="finishedEditing()" class="btn btn-outline-warning">Update</button>
 </div>
 </div>

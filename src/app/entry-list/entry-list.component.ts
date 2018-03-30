@@ -22,7 +22,7 @@ export class EntryListComponent {
     {
       return "bg-success";
     }
-    else if (currentEntry.metascore >= 50)
+    else if (currentEntry.metascore >= 45)
     {
       return "bg-warning";
     }

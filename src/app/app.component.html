@@ -34,4 +34,6 @@
 <div class="row">
   <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
 
+  <app-new-entry (sendEntry)="addEntry($event)"></app-new-entry>
+
 </div>
