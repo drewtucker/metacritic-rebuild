@@ -1,0 +1,32 @@
+<form class="form-control">
+
+<h4>Edit {{selectedEntry.title}}</h4>
+<label>Title:</label>
+<input [(ngModel)]="selectedEntry.title">
+<br>
+<select [(ngModel)]="selectedEntry.type">
+  <option value="Movie">Movie</option>
+  <option value="Game">Game</option>
+  <option value="Album">Album</option>
+  <option value="Show">Show</option>
+</select>
+<br>
+<label>Creator:</label>
+<input [(ngModel)]="selectedEntry.creator">
+<br>
+<label>metascore:</label>
+<input [(ngModel)]="selectedEntry.metascore">
+<br>
+<label>Release Date:</label>
+<input [(ngModel)]="selectedEntry.releaseDate">
+<br>
+<label>Description:</label>
+<input [(ngModel)]="selectedEntry.description">
+<br>
+<label>Creator:</label>
+<input [(ngModel)]="selectedEntry.creator">
+<br>
+<label>Image URL:</label>
+<input [(ngModel)]="selectedEntry.image">
+<button (click)="finishedEditing()" class="btn btn-warning">Update</button>
+</form>
