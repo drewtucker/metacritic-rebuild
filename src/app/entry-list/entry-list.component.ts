@@ -1,14 +1,25 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Entry } from '../../models/entry';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { EntryService } from '../entry.service';
+
 
 @Component({
   selector: 'app-entry-list',
   templateUrl: './entry-list.component.html',
-  styleUrls: ['./entry-list.component.css']
+  styleUrls: ['./entry-list.component.css'],
+  providers: [EntryService]
 })
-export class EntryListComponent {
+export class EntryListComponent implements OnInit {
 
-  @Input() childEntryList: Entry[];
+  constructor(private entryService: EntryService){}
+
+  entries: FirebaseListObservable<any[]>;
+  ngOnInit(){this.entries = this.entryService.getEntries()}
+
+
+
+  // @Input() childEntryList: Entry[];
   @Output() clickSender = new EventEmitter();
 
   editButtonClicked(entryToEdit: Entry)

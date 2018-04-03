@@ -1,18 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Entry } from '../models/entry';
-import { entries } from './mock-entries';
+import { ENTRIES } from './mock-entries';
 import * as $ from 'jquery';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(){}
+
+  ngOnInit(){}
+
   title = 'metacritic';
   selectedEntry = null;
 
-  masterEntryList: Entry[] = entries;
+  // entries: FirebaseListObservable<any[]>;
+
+  masterEntryList: Entry[] = ENTRIES;
 
   newEntry()
   {

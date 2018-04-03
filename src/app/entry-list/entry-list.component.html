@@ -1,8 +1,8 @@
 <div class="container" id="entryList">
 <div class="row" >
 
-<!-- Add a filter to the list by inserting ' | movieness ', ' | gameness ', ' | albumness ', or ' | showness ' after *ngFor="let currentEntry of childEntryList" -->
-  <div class="card" style="width: 222px; float: left" *ngFor="let currentEntry of childEntryList">
+<!-- Add a filter to the list by inserting ' | movieness ', ' | gameness ', ' | albumness ', or ' | showness ' after *ngFor="let currentEntry of entries" -->
+  <div class="card" style="width: 222px; float: left" *ngFor="let currentEntry of entries | async">
     <img class="card-img-top" src="{{currentEntry.image}}">
     <h6 class="card-title" >{{currentEntry.title}} </h6>
     <h3 [class]="scoreColor(currentEntry)" style=" padding: 10px; color: white">{{currentEntry.metascore}}</h3>

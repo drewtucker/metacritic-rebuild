@@ -32,7 +32,7 @@
 </div>
 </nav>
 
-<app-entry-list [childEntryList]="masterEntryList" (clickSender)="editEntry($event)"></app-entry-list>
+<app-entry-list (clickSender)="editEntry($event)"></app-entry-list>
 
 <div class="row">
   <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
