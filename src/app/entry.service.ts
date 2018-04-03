@@ -18,4 +18,9 @@ export class EntryService {
     return this.entries;
   }
 
+  addEntry(newEntry: Entry)
+  {
+    this.entries.push(newEntry);
+  }
+
 }

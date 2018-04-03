@@ -27,10 +27,10 @@ export class AppComponent implements OnInit {
     $("#newEntryForm").fadeToggle();
   }
 
-  addEntry(newEntry: Entry)
-  {
-    this.masterEntryList.push(newEntry);
-  }
+  // addEntry(newEntry: Entry)
+  // {
+  //   this.masterEntryList.push(newEntry);
+  // }
 
   editEntry(clickedEntry)
   {

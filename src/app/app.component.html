@@ -23,14 +23,19 @@
       <a class="nav-link" href="#">Movies</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Reports</a>
+      <a class="nav-link" routerLink="reports">Reports</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"href="#" (click)="newEntry()">Add an Entry</a>
+      <a class="nav-link" (click)="newEntry()">Add an Entry</a>
     </li>
   </ul>
 </div>
 </nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>
 
 <app-entry-list (clickSender)="editEntry($event)"></app-entry-list>
 
@@ -38,5 +43,10 @@
   <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
 
   <app-new-entry (sendEntry)="addEntry($event)"></app-new-entry>
-
 </div>
+
+<footer class="footer">
+<div class="container">
+  <a routerLink="admin">Log in as Administrator</a>
+</div>
+</footer>

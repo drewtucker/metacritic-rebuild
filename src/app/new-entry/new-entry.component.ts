@@ -8,14 +8,14 @@ import { Entry } from '../../models/entry';
 })
 export class NewEntryComponent{
 
-  @Output() sendEntry = new EventEmitter();
-
-  submitForm(type: string, title: string, creator: string, metascore: string, releaseDate: string, description: string, image: string)
-  {
-    let newEntry: Entry = new Entry(type, title, creator, parseInt(metascore), releaseDate, description, image);
-    this.sendEntry.emit(newEntry);
-    $("#newEntryForm").fadeToggle();
-  }
+  // @Output() sendEntry = new EventEmitter();
+  //
+  // submitForm(type: string, title: string, creator: string, metascore: string, releaseDate: string, description: string, image: string)
+  // {
+  //   let newEntry: Entry = new Entry(type, title, creator, parseInt(metascore), releaseDate, description, image);
+  //   this.sendEntry.emit(newEntry);
+  //   $("#newEntryForm").fadeToggle();
+  // }
 
 
 

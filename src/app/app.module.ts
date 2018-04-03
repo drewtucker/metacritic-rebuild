@@ -14,6 +14,10 @@ import { ShownessPipe } from './showness.pipe';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AdminComponent } from './admin/admin.component';
+import { ReportsComponent } from './reports/reports.component';
+import { routing } from './app.routing';
+
 
 
 
@@ -34,14 +38,17 @@ export const firebaseConfig = {
     MovienessPipe,
     GamenessPipe,
     AlbumnessPipe,
-    ShownessPipe
+    ShownessPipe,
+    AdminComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
