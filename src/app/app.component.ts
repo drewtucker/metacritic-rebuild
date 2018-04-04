@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Entry } from '../models/entry';
 import { ENTRIES } from './mock-entries';
 import * as $ from 'jquery';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Router, Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,15 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class AppComponent implements OnInit {
 
-  constructor(){}
+  constructor(private router: Router){}
 
-  ngOnInit(){}
+  ngOnInit(){
+    console.log(this.currentRoute);
+  }
 
   title = 'metacritic';
   selectedEntry = null;
+  currentRoute: string = this.router.url;
 
   // entries: FirebaseListObservable<any[]>;
 

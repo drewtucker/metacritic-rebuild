@@ -1,3 +1,6 @@
+
+<div *ngIf="currentRoute === '/'">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img style="float: left" width="50" alt="Metacritic Logo" src="https://tinyurl.com/ycr75yq9">
   <a class="navbar-brand" style="font-size: 30px" href="/"><strong>{{title}}</strong></a>
@@ -25,25 +28,41 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="reports">Reports</a>
     </li>
+    <div *ngIf="currentRoute === '/admin'">
     <li class="nav-item">
-      <a class="nav-link" (click)="newEntry()">Add an Entry</a>
-    </li>
+        <a class="nav-link" (click)="newEntry()">Add an Entry</a>
+      </li> 
+
+    </div>
+
   </ul>
 </div>
 </nav>
+</div>
+
 
 <router-outlet></router-outlet>
 
+<div class="row">
+  <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
 
+  <app-admin (sendEntry)="addEntry($event)"> </app-admin>
+
+  <app-entry-details></app-entry-details>
+</div>
+
+
+<div *ngIf="currentRoute === '/'">
 
 <div class="container">
-  <div id="gutters" class="col-md-12">
+  <div class="col-md-12">
 
 
     <app-entry-list (clickSender)="editEntry($event)"></app-entry-list>
 
   </div>
 </div>
+</div>
 
 
 
@@ -51,11 +70,6 @@
 
 
 
-<!-- <div class="row"> -->
-  <app-edit-entry [childSelectedEntry]="selectedEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
-
-  <app-new-entry (sendEntry)="addEntry($event)"></app-new-entry>
-<!-- </div> -->
 
 
 <footer class="footer">

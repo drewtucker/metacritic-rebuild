@@ -18,6 +18,11 @@ export class EntryService {
     return this.entries;
   }
 
+  getEntryById(entryId: string)
+  {
+    return this.database.object('entries/' + entryId);
+  }
+
   addEntry(newEntry: Entry)
   {
     this.entries.push(newEntry);

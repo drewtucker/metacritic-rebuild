@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ModuleWithProviders, OnInit } from '@angular/core';
 import { Entry } from '../../models/entry';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { EntryService } from '../entry.service';
+import { Router, Routes, RouterModule } from '@angular/router';
 
 
 @Component({
@@ -12,15 +13,23 @@ import { EntryService } from '../entry.service';
 })
 export class EntryListComponent implements OnInit {
 
-  constructor(private entryService: EntryService){}
-
   entries: FirebaseListObservable<any[]>;
-  ngOnInit(){this.entries = this.entryService.getEntries()}
+  currentRoute: string = this.router.url;
+
+  constructor(private entryService: EntryService, private router: Router){}
 
 
+  ngOnInit(){
+    this.entries = this.entryService.getEntries();
+    console.log(this.currentRoute);
+  }
 
-  // @Input() childEntryList: Entry[];
   @Output() clickSender = new EventEmitter();
+
+
+  goToDetailPage(clickedEntry){
+    this.router.navigate(['details', clickedEntry.$key]);
+  }
 
   editButtonClicked(entryToEdit: Entry)
   {
