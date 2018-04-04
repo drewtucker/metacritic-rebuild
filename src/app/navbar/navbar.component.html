@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img style="float: left" width="50" alt="Metacritic Logo" src="https://tinyurl.com/ycr75yq9">
+  <a class="navbar-brand" style="font-size: 30px" href="/"><strong>{{title}}</strong></a>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="search..." aria-label="Search">
+    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+<div class="collapse navbar-collapse">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Movies</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Games</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">TV</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Music</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Movies</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="reports">Reports</a>
+    </li>
+    <div *ngIf="currentRoute === '/admin'">
+    <li class="nav-item">
+        <a class="nav-link" (click)="newEntry()">Add an Entry</a>
+      </li>
+
+    </div>
+
+  </ul>
+</div>
+</nav>

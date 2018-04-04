@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ReportsComponent } from './reports/reports.component';
 import { routing } from './app.routing';
 import { EntryDetailsComponent } from './entry-details/entry-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -41,7 +42,8 @@ export const firebaseConfig = {
     ShownessPipe,
     AdminComponent,
     ReportsComponent,
-    EntryDetailsComponent
+    EntryDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
