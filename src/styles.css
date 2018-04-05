@@ -1,6 +1,5 @@
 
 
-
 .row {
   /*position: absolute;*/
   padding: 10px;
@@ -43,6 +42,12 @@ font-family: "Oswald", sans-serif;
 
 #newEntryForm {
   display: none;
+  position: sticky;
+  float: right;
+}
+
+#nav-search {
+  overflow-x: hidden;
 }
 
 .footer {

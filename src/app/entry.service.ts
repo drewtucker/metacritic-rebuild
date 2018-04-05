@@ -28,4 +28,18 @@ export class EntryService {
     this.entries.push(newEntry);
   }
 
+  updateEntry(localUpdatedEntry)
+  {
+    var entryInFirebase = this.getEntryById(localUpdatedEntry.$key);
+    entryInFirebase.update(
+      {
+        type: localUpdatedEntry.type,
+        title: localUpdatedEntry.title,
+        creator: localUpdatedEntry.creator,
+        metascore: localUpdatedEntry.metascore,
+        releaseDate: localUpdatedEntry.releaseDate,
+        description: localUpdatedEntry.description,
+        image: localUpdatedEntry.image});
+      }
+
 }

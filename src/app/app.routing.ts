@@ -7,6 +7,10 @@ import { EntryDetailsComponent } from './entry-details/entry-details.component';
 
 const appRoutes: Routes = [
 {
+  path: '',
+  component: EntryListComponent
+},
+{
   path: 'entries',
   component: EntryListComponent
 },

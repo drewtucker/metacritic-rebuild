@@ -26,4 +26,27 @@ export class EntryDetailsComponent implements OnInit {
   }
 
 
+  scoreColor(inputObservable)
+  {
+    let item;
+
+    inputObservable.subscribe(data => {
+      item = data;
+    });
+    if (item != undefined) {
+      if (item.metascore >= 75)
+      {
+        return "bg-success";
+      }
+      else if (item.metascore >= 45)
+      {
+        return "bg-warning";
+      }
+      else {
+        return "bg-danger";
+      }
+    }
+  }
+
+
 }

@@ -1,4 +1,4 @@
-import { Component, ModuleWithProviders, OnInit } from '@angular/core';
+import { Component, ModuleWithProviders, OnInit, Output, EventEmitter } from '@angular/core';
 import { EntryService } from '../entry.service';
 import { Entry } from '../../models/entry';
 import * as $ from 'jquery';
@@ -17,6 +17,9 @@ export class AdminComponent implements OnInit {
   selectedEntry = null;
   currentRoute: string = this.router.url;
 
+  @Output() clickSender = new EventEmitter();
+
+
 
   constructor(private entryService: EntryService, private router: Router) { }
 
@@ -24,9 +27,6 @@ export class AdminComponent implements OnInit {
     this.entries = this.entryService.getEntries();
     console.log(this.router.url);
   }
-
-
-
 
   submitForm(type: string, title: string, creator: string, metascore: string, releaseDate: string, description: string, image: string)
   {
@@ -38,6 +38,11 @@ export class AdminComponent implements OnInit {
   newEntry()
   {
     $("#newEntryForm").fadeToggle();
+  }
+
+  editButtonClicked(entryToEdit: Entry)
+  {
+    this.clickSender.emit(entryToEdit);
   }
 
   finishedEditing()

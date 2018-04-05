@@ -3,6 +3,7 @@ import { Entry } from '../../models/entry';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { EntryService } from '../entry.service';
 import { Router, Routes, RouterModule } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +19,11 @@ export class NavbarComponent implements OnInit {
   constructor(private entryService: EntryService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  newEntry()
+  {
+    $("#newEntryForm").fadeToggle();
   }
 
 }

@@ -1,12 +1,13 @@
-<div *ngIf="childSelectedEntry">
+
+<div *ngIf="selectedEntry">
 
 <div class="form-control" style="text-align: center">
-<h4>Edit {{childSelectedEntry.title}}</h4>
+<h4>Edit {{selectedEntry.title}}</h4>
 <label>Title:</label>
-<input [(ngModel)]="childSelectedEntry.title">
+<input [(ngModel)]="selectedEntry.title">
 <br>
 <label>Type:</label>
-<select [(ngModel)]="childSelectedEntry.type">
+<select [(ngModel)]="selectedEntry.type">
   <option [value]="Movie">Movie</option>
   <option [value]="Game">Game</option>
   <option [value]="Album">Album</option>
@@ -14,20 +15,20 @@
 </select>
 <br>
 <label>Creator:</label>
-<input [(ngModel)]="childSelectedEntry.creator">
+<input [(ngModel)]="selectedEntry.creator">
 <br>
 <label>Metascore:</label>
-<input [(ngModel)]="childSelectedEntry.metascore">
+<input [(ngModel)]="selectedEntry.metascore">
 <br>
 <label>Release Date:</label>
-<input [(ngModel)]="childSelectedEntry.releaseDate">
+<input [(ngModel)]="selectedEntry.releaseDate">
 <br>
 <label>Description:</label>
-<input [(ngModel)]="childSelectedEntry.description">
+<textarea [(ngModel)]="selectedEntry.description"></textarea>
 <br>
 <label>Image URL:</label>
-<input [(ngModel)]="childSelectedEntry.image">
+<input [(ngModel)]="selectedEntry.image">
 <hr style="border-color: gold">
-<button (click)="finishedEditing()" class="btn btn-outline-warning">Update</button>
+<button (click)="beginUpdatingEntry(selectedEntry)" class="btn btn-outline-warning">Update</button>
 </div>
 </div>

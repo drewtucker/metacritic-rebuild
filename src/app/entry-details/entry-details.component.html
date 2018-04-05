@@ -1,4 +1,18 @@
-<h3>{{(entryToDisplay | async)?.title}}</h3>
-<h6>{{(entryToDisplay | async)?.creator}}</h6>
-<h6>{{(entryToDisplay | async)?.metascore}}</h6>
-<p>{{(entryToDisplay | async)?.description}}</p>
+<!-- <app-navbar></app-navbar> -->
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-2" style="padding: 0px 0px 0px 0px">
+      <img  src="{{(entryToDisplay | async)?.image}}" style="height: 250px; width: 158px" alt="">
+    </div>
+
+    <div class="col-md-8">
+      <h3>{{(entryToDisplay | async)?.title}}</h3>
+      <h6>{{(entryToDisplay | async)?.creator}} {{(entryToDisplay | async)?.releaseDate}}</h6>
+      <h6 [class]="scoreColor(entryToDisplay)">{{(entryToDisplay | async)?.metascore}}</h6>
+      <p>{{(entryToDisplay | async)?.description}}</p>
+    </div>
+
+  </div>
+</div>

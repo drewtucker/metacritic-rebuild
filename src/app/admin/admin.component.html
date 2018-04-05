@@ -1,23 +1,5 @@
 <div *ngIf="currentRoute === '/admin'">
 
-  <div class="container">
-    <div class="col-md-12">
-      <div class="row">
-
-        <!-- Add a filter to the list by inserting ' | movieness ', ' | gameness ', ' | albumness ', or ' | showness ' after *ngFor="let currentEntry of entries" -->
-        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async">
-          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-          <h6 class="card-title" >{{currentEntry.title}} </h6>
-          <h3 [class]="scoreColor(currentEntry)" style=" padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px;
-          font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-          <p class="card-text">{{currentEntry.description}}</p>
-          <button class="btn btn-outline-secondary" (click)="editButtonClicked(currentEntry)">Edit</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
 
 
 
@@ -55,5 +37,7 @@
 </div>
 
 </div>
+
+<app-entry-list></app-entry-list>
 
 </div>
