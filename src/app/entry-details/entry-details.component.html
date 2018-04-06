@@ -1,18 +1,24 @@
-<!-- <app-navbar></app-navbar> -->
 
-<div class="container">
+<div class="container" *ngIf="entryObject != undefined">
   <div class="row">
 
-    <div class="col-md-2" style="padding: 0px 0px 0px 0px">
-      <img  src="{{(entryToDisplay | async)?.image}}" style="height: 250px; width: 158px" alt="">
-    </div>
+    <div class="panel" style="text-align: center">
+    <!-- <div class="col-md-2" style="padding: 0px 0px 0px 0px"> -->
 
-    <div class="col-md-8">
+      <img  src="{{(entryToDisplay | async)?.image}}" style="height: 250px; width: 158px" alt="">
+
+
+
+
+    <div class="panel-body">
       <h3>{{(entryToDisplay | async)?.title}}</h3>
-      <h6>{{(entryToDisplay | async)?.creator}} {{(entryToDisplay | async)?.releaseDate}}</h6>
-      <h6 [class]="scoreColor(entryToDisplay)">{{(entryToDisplay | async)?.metascore}}</h6>
+      <h6 [class]="scoreColor(entryToDisplay)" style=" margin: 20px;  color: white; font-size: 40px" >{{(entryToDisplay | async)?.metascore}}</h6>
+      <h6><strong>{{(entryToDisplay | async)?.creator}}</strong></h6>
+      <h6>{{(entryToDisplay | async)?.releaseDate}}</h6>
       <p>{{(entryToDisplay | async)?.description}}</p>
     </div>
 
+  </div>
+  <h3 *ngIf="currentRoute != '/'"> <a routerLink="/">Back to Main</a> </h3>
   </div>
 </div>
