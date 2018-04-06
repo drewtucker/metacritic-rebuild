@@ -23,6 +23,10 @@ const appRoutes: Routes = [
   component: AdminComponent
 },
 {
+  path: 'movies',
+  component: EntryListComponent
+},
+{
   path: 'details/:id',
   component: EntryDetailsComponent
 }];
