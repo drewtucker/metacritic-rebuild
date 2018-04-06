@@ -6,95 +6,93 @@
 <div class="container">
   <div class="col-md-12">
 
+    <div *ngIf= "currentRoute === '/' || currentRoute === '/admin'">
+      <div class="row" >
 
-      <!-- Add a filter to the list by inserting ' | movieness ', ' | gameness ', ' | albumness ', or ' | showness ' after *ngFor="let currentEntry of entries" -->
-      <div *ngIf= "currentRoute === '/' || currentRoute === '/admin'">
-        <div class="row" >
+        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async">
+          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
+          <h6 class="card-title" >{{currentEntry.title}} </h6>
+          <h3 [class]="scoreColor(currentEntry)" style= "padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
+          <p class="card-text">{{currentEntry.description}}</p>
 
-      <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async">
-        <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-        <h6 class="card-title" >{{currentEntry.title}} </h6>
-        <h3 [class]="scoreColor(currentEntry)" style= "padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-        <p class="card-text">{{currentEntry.description}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          </div>
 
-        <div *ngIf="currentRoute === '/admin'">
-          <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          <hr style="border-color: gold">
+
         </div>
-
-        <hr style="border-color: gold">
-
       </div>
     </div>
-  </div>
 
-      <!-- MOVIES LIST -->
-      <div *ngIf="currentRoute === '/movies'">
-        <div class="row">
+    <!-- MOVIES LIST -->
+    <div *ngIf="currentRoute === '/movies'">
+      <div class="row">
 
-      <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | movieness">
-        <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-        <h6 class="card-title" >{{currentEntry.title}} </h6>
-        <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-        <p class="card-text">{{currentEntry.description}}</p>
-        <div *ngIf="currentRoute === '/admin'">
-          <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | movieness">
+          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
+          <h6 class="card-title" >{{currentEntry.title}} </h6>
+          <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
+          <p class="card-text">{{currentEntry.description}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          </div>
+          <hr style="border-color: gold">
         </div>
-        <hr style="border-color: gold">
       </div>
-    </div>
     </div>
 
     <!-- GAMES LIST -->
     <div *ngIf="currentRoute === '/games'">
       <div class="row">
 
-    <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | gameness">
-      <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-      <h6 class="card-title" >{{currentEntry.title}} </h6>
-      <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-      <p class="card-text">{{currentEntry.description}}</p>
-      <div *ngIf="currentRoute === '/admin'">
-        <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | gameness">
+          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
+          <h6 class="card-title" >{{currentEntry.title}} </h6>
+          <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
+          <p class="card-text">{{currentEntry.description}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          </div>
+          <hr style="border-color: gold">
+        </div>
       </div>
-      <hr style="border-color: gold">
     </div>
-  </div>
-  </div>
 
-  <!-- TV SHOWS LIST -->
-  <div *ngIf="currentRoute === '/shows'">
-    <div class="row">
+    <!-- TV SHOWS LIST -->
+    <div *ngIf="currentRoute === '/shows'">
+      <div class="row">
 
-  <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | showness">
-    <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-    <h6 class="card-title" >{{currentEntry.title}} </h6>
-    <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-    <p class="card-text">{{currentEntry.description}}</p>
-    <div *ngIf="currentRoute === '/admin'">
-      <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | showness">
+          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
+          <h6 class="card-title" >{{currentEntry.title}} </h6>
+          <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
+          <p class="card-text">{{currentEntry.description}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          </div>
+          <hr style="border-color: gold">
+        </div>
+      </div>
     </div>
-    <hr style="border-color: gold">
-  </div>
-</div>
-</div>
 
 
-<!-- TV SHOWS LIST -->
-<div *ngIf="currentRoute === '/albums'">
-  <div class="row">
+    <!-- MUSIC LIST -->
+    <div *ngIf="currentRoute === '/albums'">
+      <div class="row">
 
-<div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | albumness">
-  <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
-  <h6 class="card-title" >{{currentEntry.title}} </h6>
-  <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
-  <p class="card-text">{{currentEntry.description}}</p>
-  <div *ngIf="currentRoute === '/admin'">
-    <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
-  </div>
-  <hr style="border-color: gold">
-</div>
-</div>
-</div>
+        <div class="card" style="width: 222px; " *ngFor="let currentEntry of entries | async | albumness">
+          <img class="card-img-top" (click)="goToDetailPage(currentEntry)" src="{{currentEntry.image}}">
+          <h6 class="card-title" >{{currentEntry.title}} </h6>
+          <h3 [class]="scoreColor(currentEntry)" style="padding: 10px; position: absolute; z-index: 3; margin-right: 10px; margin-top: 10px; right: 9px; top: 9px; font-size: 22px; display: block; color: white">{{currentEntry.metascore}}</h3>
+          <p class="card-text">{{currentEntry.description}}</p>
+          <div *ngIf="currentRoute === '/admin'">
+            <app-edit-entry [selectedEntry]="currentEntry" (clickedDone)="finishedEditing()"></app-edit-entry>
+          </div>
+          <hr style="border-color: gold">
+        </div>
+      </div>
+    </div>
 
 
   </div>
