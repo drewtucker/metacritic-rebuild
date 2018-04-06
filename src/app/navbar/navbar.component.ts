@@ -5,6 +5,8 @@ import { AuthenticationService } from '../authentication.service';
 import { EntryService } from '../entry.service';
 import { Router, Routes, RouterModule } from '@angular/router';
 import * as $ from 'jquery';
+import * as firebase from "firebase";
+
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +16,7 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
-
+  user;
   private isLoggedIn: Boolean;
   private userName: String;
   currentRoute: string = this.router.url;
@@ -51,6 +53,11 @@ export class NavbarComponent implements OnInit {
   newEntry()
   {
     $("#newEntryForm").fadeToggle();
+  }
+
+  ngDoCheck()
+  {
+    this.user = firebase.auth().currentUser;
   }
 
 }
