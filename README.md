@@ -1,5 +1,7 @@
 # MetacriticRebuild
 
+https://metacritic-rebuild.firebaseapp.com/
+
 An attempt to rebuild the website metacritic.com using Angular and Typescript.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
