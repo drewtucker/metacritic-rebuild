@@ -35,9 +35,12 @@
       <a class="nav-link" (click)="login()">Log In</a>
     </li>
     <li class="nav-item" *ngIf="isLoggedIn">
-      <a>{{userName}}</a>
-      <a class="nav-link" href="#">Log Out</a>
+      <a class="nav-link" (click)="logout()">Log Out</a>
     </li>
+    <li class="nav-item" *ngIf="isLoggedIn">
+      <a class="nav-link">{{userName}}</a>
+    </li>
+
 
   </ul>
 </div>

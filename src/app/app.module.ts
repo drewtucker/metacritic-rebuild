@@ -19,6 +19,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { routing } from './app.routing';
 import { EntryDetailsComponent } from './entry-details/entry-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 
@@ -51,6 +52,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     routing
   ],
   providers: [],
