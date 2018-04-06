@@ -10,13 +10,17 @@ export class AlbumnessPipe implements PipeTransform {
   transform(input: Entry[], args)
   {
     var output: Entry[] = [];
-    for (var i = 0; i < input.length; i++)
+    if(input != null)
     {
-      if(input[i].type === "Album")
+      for (var i = 0; i < input.length; i++)
       {
-        output.push(input[i]);
+        if(input[i].type === "Album")
+        {
+          output.push(input[i]);
+        }
       }
+      return output;
+
     }
-    return output;
   }
 }

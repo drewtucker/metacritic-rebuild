@@ -9,9 +9,9 @@ import { Entry } from '../models/entry';
 export class MovienessPipe implements PipeTransform {
   transform(input: Entry[], args)
   {
+    var output: Entry[] = [];
     if(input != null)
     {
-      var output: Entry[] = [];
       for (var i = 0; i < input.length; i++)
       {
         if(input[i].type === "Movie")

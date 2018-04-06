@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light ">
-  <img style="float: left" width="50" alt="Metacritic Logo" src="https://tinyurl.com/ycr75yq9">
-  <a class="navbar-brand" style="font-size: 30px" href="/"><strong>{{title}}</strong></a>
+  <img style="float: left" width="50" alt="Metacritic Logo" routerLink="/" src="https://tinyurl.com/ycr75yq9">
+  <a class="navbar-brand" style="font-size: 30px" routerLink="/"><strong>{{title}}</strong></a>
   <form id="nav-search" class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="search..." aria-label="Search">
     <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -9,22 +9,19 @@
 <div class="collapse navbar-collapse">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a class="nav-link" routerLink="movies">Movies</a>
+      <a class="nav-link" routerLink="/movies">Movies</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Games</a>
+      <a class="nav-link" routerLink="/games">Games</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">TV</a>
+      <a class="nav-link" routerLink="/shows">TV</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Music</a>
+      <a class="nav-link" routerLink="/albums">Music</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Movies</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="reports">Reports</a>
+      <a class="nav-link" routerLink="/reports">Reports</a>
     </li>
     <div *ngIf="currentRoute === '/admin'">
     <li class="nav-item">
@@ -38,7 +35,7 @@
       <a class="nav-link" (click)="logout()">Log Out</a>
     </li>
     <li class="nav-item" *ngIf="isLoggedIn">
-      <a class="nav-link">{{userName}}</a>
+      <a class="nav-link">Logged in as: {{userName}}</a>
     </li>
 
 

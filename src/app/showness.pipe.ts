@@ -10,13 +10,16 @@ export class ShownessPipe implements PipeTransform {
   transform(input: Entry[], args)
   {
     var output: Entry[] = [];
-    for (var i = 0; i < input.length; i++)
+    if(input != null)
     {
-      if(input[i].type === "Show")
+      for (var i = 0; i < input.length; i++)
       {
-        output.push(input[i]);
+        if(input[i].type === "Show")
+        {
+          output.push(input[i]);
+        }
       }
+      return output;
     }
-    return output;
   }
 }

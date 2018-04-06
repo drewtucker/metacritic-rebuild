@@ -27,6 +27,18 @@ const appRoutes: Routes = [
   component: EntryListComponent
 },
 {
+  path: 'games',
+  component: EntryListComponent
+},
+{
+  path: 'shows',
+  component: EntryListComponent
+},
+{
+  path: 'albums',
+  component: EntryListComponent
+},
+{
   path: 'details/:id',
   component: EntryDetailsComponent
 }];
